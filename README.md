@@ -1,5 +1,5 @@
 # Ten-Pin Bowling: A Scoreboard
-### Programmed as part of the Technical Assessment for the BBC Digital Media Graduate Scheme 2015
+### Programmed as part of the Technical Assessment for a Graduate Scheme
 
 ## Author
 Niklas Rahmel

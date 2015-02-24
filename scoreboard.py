@@ -88,7 +88,7 @@ class Competitor:
 				frameline += str(self.frames[i][0]) + "|\\|"
 			else:
 				frameline += (str(self.frames[i][0]) + "|" +
-				              str(self.frames[i][1]) + "|")
+				                            str(self.frames[i][1]) + "|")
 
 		# Final Frame1
 		# If Strike in last frame
@@ -156,7 +156,7 @@ def main():
 
 			# If last frame is spare
 			elif frame == (FRAMES - 1) and (competitor.frames[FRAMES - 1][0] +
-			                     competitor.frames[FRAMES - 1][1]) == 10:
+			                                competitor.frames[FRAMES - 1][1]) == 10:
 				# Play one more ball
 				print "Play 1 more ball for " + competitor.competitor_name
 				for frame_new in xrange(FRAMES, FRAMES + 1):
@@ -167,4 +167,4 @@ def main():
 		competitor.print_scorecard()
 
 if __name__ == "__main__":
-    main()
+        main()

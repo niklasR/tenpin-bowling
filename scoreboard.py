@@ -5,14 +5,14 @@ competitors = []
 
 class Competitor:
     def __init__(self, competitor_name):
-    """Constructor: Set Name and empty scorecard."""
+        """Constructor: Set Name and empty scorecard."""
         self.competitor_name = competitor_name
         self.frames = []
         self.scores = []
         self.score = 0
 
     def compute_score(self):
-    """Compute the scores for each frame and the total."""
+        """Compute the scores for each frame and the total."""
         for i in xrange(FRAMES):
             # STRIKE
             if self.frames[i][0] == 10:
@@ -37,7 +37,7 @@ class Competitor:
             self.score += score
 
     def play_frame(self, frame, single_ball=False):
-    """Ask user to enter data of a played frame and record it."""
+        """Ask user to enter data of a played frame and record it."""
         self.frames.append([])
         print "== COMPETITOR: " + self.competitor_name + " =="
         ## FIRST BALL ##
@@ -58,7 +58,7 @@ class Competitor:
 
 
     def enter_score(self):
-    """Asks user to enter score and checks for validity."""
+        """Asks user to enter score and checks for validity."""
         int_invalid = True # Initialise to this as no int entered yet
         # To ensure that an 0<=integer>=10, and an integer only, is enetered
         while int_invalid:
@@ -74,7 +74,7 @@ class Competitor:
         return score
 
     def print_scorecard(self):
-    """Print the competitors' scoreboard."""
+        """Print the competitors' scoreboard."""
         self.compute_score()
         frameline = "|"
         scoreline = "|"

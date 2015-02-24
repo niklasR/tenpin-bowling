@@ -63,8 +63,8 @@ class Competitor:
 		# To ensure that an 0<=integer>=10, and an integer only, is enetered
 		while int_invalid:
 			try:
-				score = int(raw_input("Please only enter a number and confirm "+
-				                      "with <ENTER>\n"))
+				score = int(raw_input("Please only enter a number and " +
+									  "confirm with <ENTER>\n"))
 				if (score <= 10 and score >=0): # possible range
 					int_invalid = False
 				else:
@@ -86,17 +86,21 @@ class Competitor:
 			elif self.frames[i][0] + self.frames[i][1] == 10:
 				frameline += str(self.frames[i][0]) + "|\\|"
 			else:
-				frameline += str(self.frames[i][0]) + "|" + str(self.frames[i][1]) + "|"
+				frameline += (str(self.frames[i][0]) + "|" +
+				              str(self.frames[i][1]) + "|")
 
 		# Final Frame1
 		# If Strike in last frame
 		if self.frames[FRAMES - 1][0] == 10:
-			frameline += "X|" + str(self.frames[FRAMES][0]) + "|" + str(self.frames[FRAMES + 1][0])
+			frameline += ("X|" + str(self.frames[FRAMES][0]) + "|" +
+			              str(self.frames[FRAMES + 1][0]))
 		# If Spare in last frame
 		elif self.frames[FRAMES - 1][0] + self.frames[FRAMES - 1][1] == 10:
-			frameline += str(self.frames[FRAMES - 1][0]) + "\\|" + str(self.frames[FRAMES][0])
+			frameline += (str(self.frames[FRAMES - 1][0]) + "\\|" +
+			              str(self.frames[FRAMES][0]))
 		else:
-			frameline += str(self.frames[FRAMES - 1][0]) + "|" + str(self.frames[FRAMES - 1][1])
+			frameline += (str(self.frames[FRAMES - 1][0]) + "|" +
+			              str(self.frames[FRAMES - 1][1]))
 
 		# Assemble Scoreline (total points scored for each frame)
 		for score in self.scores:
@@ -137,14 +141,15 @@ def main():
 			# If last frame is strike
 			if frame == (FRAMES - 1) and competitor.frames[FRAMES - 1][0] == 10:
 				# Play two more balls
-				print "Playing 2 more balls frames for " + competitor.competitor_name
+				print ("Playing 2 more balls frames for " +
+				       competitor.competitor_name)
 				for frame_new in xrange(FRAMES, FRAMES + 1):
 					competitor.play_frame(frame_new)
 				# If 2nd ball is strike, play one more ball
 				if competitor.frames[FRAMES][0] == 10:
 					for frame_new in xrange(FRAMES + 1, FRAMES + 2):
 						competitor.play_frame(frame_new, single_ball = True)
-				
+
 			# If last frame is spare
 			elif frame == (FRAMES - 1) and (competitor.frames[FRAMES - 1][0] +
 			                     competitor.frames[FRAMES - 1][1]) == 10:

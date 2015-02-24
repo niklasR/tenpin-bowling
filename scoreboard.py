@@ -5,12 +5,14 @@ competitors = []
 
 class Competitor:
 	def __init__(self, competitor_name):
+	"""Constructor: Set Name and empty scorecard."""
 		self.competitor_name = competitor_name
 		self.frames = []
 		self.scores = []
 		self.score = 0
 
 	def compute_score(self):
+	"""Compute the scores for each frame and the total."""
 		for i in xrange(FRAMES):
 			# STRIKE
 			if self.frames[i][0] == 10:
@@ -35,6 +37,7 @@ class Competitor:
 			self.score += score
 
 	def play_frame(self, frame, single_ball=False):
+	"""Ask user to enter data of a played frame and record it."""
 		self.frames.append([])
 		print "== COMPETITOR: " + self.competitor_name + " =="
 		## FIRST BALL ##
@@ -55,6 +58,7 @@ class Competitor:
 
 
 	def enter_score(self):
+	"""Asks user to enter score and checks for validity."""
 		int_invalid = True # Initialise to this as no int entered yet
 		# To ensure that an 0<=integer>=10, and an integer only, is enetered
 		while int_invalid:
@@ -70,6 +74,7 @@ class Competitor:
 		return score
 
 	def print_scorecard(self):
+	"""Print the competitors' scoreboard."""
 		self.compute_score()
 		frameline = "|"
 		scoreline = "|"
@@ -111,9 +116,11 @@ class Competitor:
 
 
 def add_competitor(name):
+	"""Create a new competitor instance and add it to the list."""
 	competitors.append(Competitor(name))
 
 def add_competitors():
+	"""Ask user for names of competitors."""
 	while len(competitors) < MAX_COMPETITORS:
 		next_competitor = raw_input("Enter the next competitor and confirm " +
 		                            "with <ENTER>. If there are no more " +
@@ -124,6 +131,7 @@ def add_competitors():
 			add_competitor(next_competitor)
 
 def main():
+	"""Record a whole game"""
 	# Add competitors to game
 	add_competitors()
 
@@ -157,7 +165,6 @@ def main():
 	# Print Scoreboard for each competitor
 	for competitor in competitors:
 		competitor.print_scorecard()
-
 
 if __name__ == "__main__":
     main()

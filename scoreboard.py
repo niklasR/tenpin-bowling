@@ -10,10 +10,6 @@ class Competitor:
 		self.scores = []
 		self.score = 0
 
-
-	def add_points(self, points):
-		self.score += points
-
 	def compute_score(self):
 		for i in xrange(FRAMES):
 			# STRIKE

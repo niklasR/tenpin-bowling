@@ -8,7 +8,7 @@ Niklas Rahmel
 This code forms part of an assessment and may not be used by any other party.
 
 ## System Requirements
-This program requires at least Python 2.7 to be installed, as well as a y to access stdin and stdout.
+This program requires at least Python 2.7 to be installed, as well as access to stdin and stdout.
 
 ## Run
 Start the Program with Python like `python scoreboard.py`

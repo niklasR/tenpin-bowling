@@ -141,7 +141,7 @@ def main():
 			# If last frame is strike
 			if frame == (FRAMES - 1) and competitor.frames[FRAMES - 1][0] == 10:
 				# Play two more balls
-				print ("Playing 2 more balls frames for " +
+				print ("Playing 2 more balls for " +
 				       competitor.competitor_name)
 				for frame_new in xrange(FRAMES, FRAMES + 1):
 					competitor.play_frame(frame_new)
